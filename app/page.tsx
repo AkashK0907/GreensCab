@@ -5,40 +5,67 @@ import { Leaf, ArrowRight, Car, ChevronDown, ChevronLeft, ChevronRight, Clock3, 
 
 const fleet = [
   { 
-    title: 'Executive Sedans', 
-    description: 'Premium Toyota Etios for city meetings, local travel & KIAL airport transfers.', 
-    image: 'https://safeway.travel/images/fleet_gallery/toyota-etios-sedan/001.jpg?v=1', 
+    title: 'Sedan Etios', 
+    description: 'Premium Sedan Etios for city meetings, local travel & KIAL airport transfers.', 
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800', 
     badge: 'From ₹2,000', 
     specs: [{icon: Users, text: '4 Passengers + 2 Bags'}, {icon: Clock3, text: 'Local: ₹2,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹12 / km'}], 
-    link: 'View Sedans', 
-    url: '/fleet?category=Sedans' 
+    link: 'Book Etios', 
+    url: '/fleet?category=Sedan+Etios' 
   },
   { 
-    title: 'SUVs & Luxury MPVs', 
-    description: 'Innova Crysta, Hycross Hybrid, Kia Carens & Ertiga for family comfort.', 
+    title: 'Ertiga', 
+    description: 'Comfortable Maruti Suzuki Ertiga for family outings and local travel.', 
+    image: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/002.jpg?v=1', 
+    badge: 'Family Travel', 
+    specs: [{icon: Users, text: '6 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹18 / km'}], 
+    link: 'Book Ertiga', 
+    url: '/fleet?category=Ertiga' 
+  },
+  { 
+    title: 'Kia Carens', 
+    description: 'Premium Kia Carens for luxury travel, KIAL transfers and outstation trips.', 
+    image: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=1', 
+    badge: 'Premium MPV', 
+    specs: [{icon: Users, text: '6 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹20 / km'}], 
+    link: 'Book Carens', 
+    url: '/fleet?category=Kia+Carens' 
+  },
+  { 
+    title: 'Innova Crysta', 
+    description: 'Spacious Toyota Innova Crysta for outstation tours and long journeys.', 
     image: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=1', 
     badge: 'Most Popular', 
-    specs: [{icon: Users, text: '6 - 7 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,500 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹22 / km'}], 
-    link: 'View SUVs & MPVs', 
-    url: '/fleet?category=SUVs+%26+MPVs' 
+    specs: [{icon: Users, text: '7 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,500 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹22 / km'}], 
+    link: 'Book Crysta', 
+    url: '/fleet?category=Innova+Crysta' 
   },
   { 
-    title: 'Tempo Travellers', 
-    description: 'Maharaja 12-Seater Tempo Travellers with pushback seats and ample legroom.', 
+    title: 'Innova Hycross', 
+    description: 'Hybrid Toyota Innova Hycross with panoramic sunroof and captain seats.', 
+    image: 'https://safeway.travel/images/fleet_gallery/toyota-hycross-vx8s/001.jpg?v=1', 
+    badge: 'Eco Luxury', 
+    specs: [{icon: Users, text: '7 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹4,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹25 / km'}], 
+    link: 'Book Hycross', 
+    url: '/fleet?category=Innova+Hycross' 
+  },
+  { 
+    title: 'Tempo Traveller', 
+    description: 'Maharaja 12-Seater Tempo Traveller with pushback seats and ample legroom.', 
     image: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/002.jpg?v=1', 
     badge: 'Group Travel', 
     specs: [{icon: Users, text: '12 Passengers'}, {icon: Car, text: 'Pushback Seats'}, {icon: MapPin, text: 'Outstation: ₹25 / km'}], 
-    link: 'View Tempo Travellers', 
-    url: '/fleet?category=Tempo+Travellers' 
+    link: 'Book Tempo Traveller', 
+    url: '/fleet?category=Tempo+Traveller' 
   },
   { 
-    title: 'Force Urbania', 
-    description: 'Next-Gen Force Urbania 16-Seater with luxury captain recliners and panoramic windows.', 
+    title: 'Urbania', 
+    description: 'Next-Gen Force Urbania 16-Seater with luxury captain recliners.', 
     image: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/001.jpg?v=1', 
     badge: 'VIP Recliners', 
     specs: [{icon: Users, text: '16 Passengers'}, {icon: Car, text: 'Luxury Captain Chairs'}, {icon: MapPin, text: 'Outstation: ₹35 / km'}], 
-    link: 'View Force Urbania', 
-    url: '/fleet?category=Force+Urbania' 
+    link: 'Book Urbania', 
+    url: '/fleet?category=Urbania' 
   },
 ]
 

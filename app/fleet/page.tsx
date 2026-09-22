@@ -6,57 +6,57 @@ import { Leaf, Menu, X, PhoneCall, MessageCircle, Search, LayoutGrid, Car, Shiel
 // Dummy car database simulating the 46 vehicles based on screenshots
 const allCars = [
   { 
-    id: 1, name: 'Toyota Etios', category: 'Sedans', passengers: 4, photos: 3, 
-    desc: 'Hire the premium Toyota Etios in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
+    id: 1, name: 'Sedan Etios', category: 'Sedan Etios', passengers: 4, photos: 3, 
+    desc: 'Hire the premium Sedan Etios in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Chauffeur Driven', 'Luggage Boot'],
     rates: { local: 2000, outstation: 12, airport: 1500 },
-    img: 'https://safeway.travel/images/fleet_gallery/toyota-etios-sedan/001.jpg?v=1'
+    img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800'
   },
   { 
-    id: 2, name: 'Maruti Suzuki Ertiga', category: 'SUVs & MPVs', passengers: 6, photos: 3, 
-    desc: 'Hire the premium Maruti Suzuki Ertiga in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
+    id: 2, name: 'Ertiga', category: 'Ertiga', passengers: 6, photos: 3, 
+    desc: 'Hire the premium Ertiga in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Chauffeur Driven', 'Luggage Boot'],
     rates: { local: 3000, outstation: 18, airport: 2200 },
     img: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/002.jpg?v=1'
   },
   { 
-    id: 3, name: 'Kia Carens', category: 'SUVs & MPVs', passengers: 6, photos: 4, 
+    id: 3, name: 'Kia Carens', category: 'Kia Carens', passengers: 6, photos: 4, 
     desc: 'Hire the premium Kia Carens in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Chauffeur Driven', 'Luggage Boot'],
     rates: { local: 3000, outstation: 20, airport: 2500 },
     img: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=1'
   },
   { 
-    id: 4, name: 'Toyota Innova Crysta', category: 'SUVs & MPVs', passengers: 7, photos: 5, 
-    desc: 'Hire the premium Toyota Innova Crysta in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
+    id: 4, name: 'Innova Crysta', category: 'Innova Crysta', passengers: 7, photos: 5, 
+    desc: 'Hire the premium Innova Crysta in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Captain Seats', 'Extra Luggage'],
     rates: { local: 3500, outstation: 22, airport: 2800 },
     img: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=1'
   },
   { 
-    id: 5, name: 'Toyota Innova Hycross', category: 'SUVs & MPVs', passengers: 7, photos: 6, 
-    desc: 'Hire the premium Toyota Innova Hycross in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
+    id: 5, name: 'Innova Hycross', category: 'Innova Hycross', passengers: 7, photos: 6, 
+    desc: 'Hire the premium Innova Hycross in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Hybrid', 'Panoramic Sunroof'],
     rates: { local: 4000, outstation: 25, airport: 3200 },
     img: 'https://safeway.travel/images/fleet_gallery/toyota-hycross-vx8s/001.jpg?v=1'
   },
   { 
-    id: 6, name: 'Tempo Traveller', category: 'Tempo Travellers', passengers: 12, photos: 8, 
+    id: 6, name: 'Tempo Traveller', category: 'Tempo Traveller', passengers: 12, photos: 8, 
     desc: 'Hire the premium Tempo Traveller in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Pushback Seats', 'Ample Legroom'],
     rates: { local: 5000, outstation: 25, airport: 4000 },
     img: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/002.jpg?v=1'
   },
   { 
-    id: 7, name: 'Force Urbania', category: 'Force Urbania', passengers: 16, photos: 10, 
-    desc: 'Hire the premium Force Urbania in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
+    id: 7, name: 'Urbania', category: 'Urbania', passengers: 16, photos: 10, 
+    desc: 'Hire the premium Urbania in Bengaluru for city local 8hr/80km rentals, KIAL transfers, and South India outstation tours.',
     tags: ['AC', 'Captain Recliners', 'Panoramic Windows'],
     rates: { local: 7500, outstation: 35, airport: 6000 },
     img: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/001.jpg?v=1'
   },
 ]
 
-const categories = ['All (7)', 'Sedans', 'SUVs & MPVs', 'Tempo Travellers', 'Force Urbania']
+const categories = ['All (7)', 'Sedan Etios', 'Ertiga', 'Kia Carens', 'Innova Crysta', 'Innova Hycross', 'Tempo Traveller', 'Urbania']
 
 export default function FleetPage() {
   const [menuOpen, setMenuOpen] = useState(false)
