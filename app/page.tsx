@@ -4,10 +4,42 @@ import { useState, useEffect } from 'react'
 import { Leaf, ArrowRight, Car, ChevronDown, ChevronLeft, ChevronRight, Clock3, MapPin, Menu, MessageCircle, Users, X, Map, ShieldCheck, HelpCircle, PhoneCall } from 'lucide-react'
 
 const fleet = [
-  { title: 'Executive Sedans', description: 'Dzire, Etios, Amaze & Honda City for city meetings & KIAL airport.', image: 'https://safeway.travel/images/fleet_gallery/toyota-hycross-vx8s/001.jpg?v=1b54a649', badge: 'From ₹2,000', specs: [{icon: Users, text: '4 Passengers + 2 Bags'}, {icon: Clock3, text: 'Local: ₹2,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹15 / km'}], link: 'View Sedans', url: '/fleet?category=Sedans' },
-  { title: 'SUVs & Luxury MPVs', description: 'Innova Crysta, Hycross Hybrid, Fortuner & Ertiga for family comfort.', image: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=6d5e06e5', badge: 'Most Popular', specs: [{icon: Users, text: '6 - 8 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,500 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹22 / km'}], link: 'View SUVs & MPVs', url: '/fleet?category=SUVs+%26+MPVs' },
-  { title: 'Tempo & Urbania', description: 'Maharaja 9 - 12S TT & Next-Gen Force Urbania 9 - 16S captain chairs.', image: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/002.jpg?v=e07445ad', badge: 'VIP Recliners', specs: [{icon: Users, text: '9 - 16 Passengers'}, {icon: Car, text: '1x1 Luxury Captain Chairs'}, {icon: MapPin, text: 'Outstation: ₹25 - ₹50/km'}], link: 'View Vans & Urbania', url: '/fleet?category=Force+Urbania' },
-  { title: 'Luxury Coaches', description: 'Mini Buses (21-27S), Heavy Coaches (35-49S), Sleeper & Ultra Luxury Volvo.', image: 'https://safeway.travel/images/fleet_gallery/bharatbenz-glider-45/001.jpg?v=9d5a8277', badge: '21 - 49 Seater', specs: [{icon: Users, text: '21 - 49 Pax / 30-36 Berths'}, {icon: ShieldCheck, text: 'Air Suspension & Dual AC'}, {icon: MapPin, text: 'Outstation: ₹40 - ₹125/km'}], link: 'View Coaches', url: '/fleet?category=Heavy+Coaches' },
+  { 
+    title: 'Executive Sedans', 
+    description: 'Premium Toyota Etios for city meetings, local travel & KIAL airport transfers.', 
+    image: 'https://safeway.travel/images/fleet_gallery/toyota-etios-sedan/001.jpg?v=1', 
+    badge: 'From ₹2,000', 
+    specs: [{icon: Users, text: '4 Passengers + 2 Bags'}, {icon: Clock3, text: 'Local: ₹2,000 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹12 / km'}], 
+    link: 'View Sedans', 
+    url: '/fleet?category=Sedans' 
+  },
+  { 
+    title: 'SUVs & Luxury MPVs', 
+    description: 'Innova Crysta, Hycross Hybrid, Kia Carens & Ertiga for family comfort.', 
+    image: 'https://safeway.travel/images/fleet_gallery/toyota-innova-crysta-gx7s/001.jpg?v=1', 
+    badge: 'Most Popular', 
+    specs: [{icon: Users, text: '6 - 7 Passengers + Luggage'}, {icon: Clock3, text: 'Local: ₹3,500 (8h/80k)'}, {icon: MapPin, text: 'Outstation: ₹22 / km'}], 
+    link: 'View SUVs & MPVs', 
+    url: '/fleet?category=SUVs+%26+MPVs' 
+  },
+  { 
+    title: 'Tempo Travellers', 
+    description: 'Maharaja 12-Seater Tempo Travellers with pushback seats and ample legroom.', 
+    image: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/002.jpg?v=1', 
+    badge: 'Group Travel', 
+    specs: [{icon: Users, text: '12 Passengers'}, {icon: Car, text: 'Pushback Seats'}, {icon: MapPin, text: 'Outstation: ₹25 / km'}], 
+    link: 'View Tempo Travellers', 
+    url: '/fleet?category=Tempo+Travellers' 
+  },
+  { 
+    title: 'Force Urbania', 
+    description: 'Next-Gen Force Urbania 16-Seater with luxury captain recliners and panoramic windows.', 
+    image: 'https://safeway.travel/images/fleet_gallery/force-urbania-12/001.jpg?v=1', 
+    badge: 'VIP Recliners', 
+    specs: [{icon: Users, text: '16 Passengers'}, {icon: Car, text: 'Luxury Captain Chairs'}, {icon: MapPin, text: 'Outstation: ₹35 / km'}], 
+    link: 'View Force Urbania', 
+    url: '/fleet?category=Force+Urbania' 
+  },
 ]
 
 const tours = [
