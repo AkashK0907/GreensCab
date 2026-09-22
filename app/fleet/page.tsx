@@ -84,7 +84,7 @@ export default function FleetPage() {
   }, [])
 
   const filteredCars = allCars.filter(car => {
-    const matchesCat = activeCategory === 'All (48)' || car.category === activeCategory
+    const matchesCat = activeCategory.startsWith('All') || car.category === activeCategory
     const matchesSearch = car.name.toLowerCase().includes(search.toLowerCase())
     return matchesCat && matchesSearch
   })
@@ -140,7 +140,7 @@ export default function FleetPage() {
               <button 
                 key={cat} 
                 className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => setActiveCategory(activeCategory === cat && !cat.startsWith('All') ? categories[0] : cat)}
               >
                 {cat}
               </button>
