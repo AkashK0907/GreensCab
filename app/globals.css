@@ -14,7 +14,7 @@
   --radius:14px;
 }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; overscroll-behavior:none; background:#fff; } font-family:var(--font-inter-family); }
+html { scroll-behavior:smooth; overscroll-behavior:none; background:#fff; font-family:var(--font-inter-family); }
 body { margin:0; background:#fff; overscroll-behavior:none; color:var(--ink); font-family:var(--font-inter-family); font-weight:400; }
 p { font-family:var(--font-inter-family); font-weight:400; }
 h1, h2, h3, h4, h5, h6 { font-family:var(--font-inter-family); font-weight:700; }
