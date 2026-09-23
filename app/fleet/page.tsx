@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Leaf, Menu, X, PhoneCall, MessageCircle, Search, LayoutGrid, Car, ShieldCheck, HelpCircle, Calendar, ChevronDown, Users, Image as ImageIcon } from 'lucide-react'
+import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, Search, LayoutGrid, Car, ShieldCheck, HelpCircle, Calendar, ChevronDown, Users, Image as ImageIcon } from 'lucide-react'
 
 // Dummy car database simulating the 46 vehicles based on screenshots
 const allCars = [
@@ -100,6 +100,15 @@ export default function FleetPage() {
         </button>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           <a href="/#fleet" onClick={() => setMenuOpen(false)}><Car size={16} /> Fleet</a>
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-btn"><Briefcase size={16} /> Services <ChevronDown size={14} /></button>
+            <div className="nav-dropdown-content">
+              <a href="/#services" onClick={() => setMenuOpen(false)}>Airport pickup & drop</a>
+              <a href="/#services" onClick={() => setMenuOpen(false)}>City Local Rental</a>
+              <a href="/#services" onClick={() => setMenuOpen(false)}>Outstation Cabs</a>
+              <a href="/#services" onClick={() => setMenuOpen(false)}>Tour Cab Booking</a>
+            </div>
+          </div>
           <a href="/#tours" onClick={() => setMenuOpen(false)}><LayoutGrid size={16} /> Tours</a>
           <a href="/#why" onClick={() => setMenuOpen(false)}><ShieldCheck size={16} /> Why Us</a>
           <a href="/#faq" onClick={() => setMenuOpen(false)}><HelpCircle size={16} /> FAQs</a>
@@ -236,5 +245,6 @@ export default function FleetPage() {
     <a href={whatsapp} className="floating-whatsapp" aria-label="WhatsApp us"><MessageCircle /></a></main>
   )
 }
+
 
 
