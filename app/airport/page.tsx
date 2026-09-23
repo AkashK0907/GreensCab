@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react'
 import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Phone, Tag, Route } from 'lucide-react'
 
 const airportTaxis = [
-  { id: 1, name: 'Sedan', img: 'https://greensrentacab.com/assets/images/dzire.png', seats: '4+1', fare: '₹999.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 2, name: 'Etios Airport Taxi', img: 'https://greensrentacab.com/assets/images/etios.png', seats: '4+1', fare: '₹1099.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 3, name: 'Ertiga Airport Taxi', img: 'https://greensrentacab.com/assets/images/ertiga.png', seats: '6+1', fare: '₹1499.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 4, name: 'Ciaz Airport Taxi', img: 'https://greensrentacab.com/assets/images/ciaz.png', seats: '4+1', fare: '₹1499.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 5, name: 'Innova Airport Taxi', img: 'https://greensrentacab.com/assets/images/innova.png', seats: '7+1', fare: '₹1799.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 6, name: 'Kia Carens Airport Taxi', img: 'https://greensrentacab.com/assets/images/kia-carens.png', seats: '6+1', fare: '₹1799.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
-  { id: 7, name: 'Innova Crysta Airport Taxi', img: 'https://greensrentacab.com/assets/images/innova-crysta.png', seats: '7+1', fare: '₹2199.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
-  { id: 8, name: 'Innova Hycross Airport Taxi', img: 'https://greensrentacab.com/assets/images/innova-hycross.png', seats: '7+1', fare: '₹2999.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
-  { id: 9, name: 'Tempo Traveller For Airport', img: 'https://greensrentacab.com/assets/images/tempo-traveller.png', seats: '12+1', fare: '₹3999.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
-  { id: 10, name: 'Tempo Traveller AC', img: 'https://greensrentacab.com/assets/images/tempo-traveller-ac.png', seats: '12+1', fare: '₹4499.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
+  { id: 1, name: 'Sedan', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-18-08-SedanAirportTaxi.jpg', seats: '4+1', fare: '₹999.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 2, name: 'Etios Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-18-38-EtiosAirportTaxi.jpg', seats: '4+1', fare: '₹1099.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 3, name: 'Ertiga Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-19-36-ErtigaAirportTaxi.png', seats: '6+1', fare: '₹1499.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 4, name: 'Ciaz Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-19-19-CiazAirportTaxi.png', seats: '4+1', fare: '₹1499.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 5, name: 'Innova Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-21-56-InnovaAirportTaxi.png', seats: '7+1', fare: '₹1799.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 6, name: 'Kia Carens Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-20-44-KiaCarnesAirportTaxi.png', seats: '6+1', fare: '₹1799.00', toll: 'Toll Optional', distance: 'Upto 30 km' },
+  { id: 7, name: 'Innova Crysta Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-25-05-InnovaCrystaAirportTaxi.png', seats: '7+1', fare: '₹2199.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
+  { id: 8, name: 'Innova Hycross Airport Taxi', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-25-48-InnovaHycrossAirportTaxi.png', seats: '7+1', fare: '₹2999.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
+  { id: 9, name: 'Tempo Traveller For Airport', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-26-23-TempoTravellerAirport.png', seats: '12+1', fare: '₹3999.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
+  { id: 10, name: 'Tempo Traveller AC', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-27-10-TempoTravellerAirport.png', seats: '12+1', fare: '₹4499.00', toll: 'Toll Optional', distance: 'Upto 40 km' },
 ]
 
 export default function AirportPage() {
@@ -72,7 +72,6 @@ export default function AirportPage() {
                 <div className="airport-card-body">
                   <h3>{car.name}</h3>
                   <div className="seat-info">
-                    <img src="https://greensrentacab.com/assets/images/seat.svg" alt="seat" style={{width: 14, opacity: 0.7}} onError={(e) => e.currentTarget.style.display = 'none'} />
                     <span><Users size={14} className="icon-orange" /> {car.seats}</span>
                   </div>
                   <div className="divider"></div>
