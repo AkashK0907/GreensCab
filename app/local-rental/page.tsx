@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, Clock } from 'lucide-react'
+import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, Clock, ChevronDown } from 'lucide-react'
 
 const localTaxis = [
   { id: 1, name: 'Etios Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-39-09-EtiosCarRental.jpg', seats: '4+1', fare: '₹2400.00', included: '8Hrs 80Kms included', extra: 'Extra ₹15.00/km \n ₹150.00/hour' },
