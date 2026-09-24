@@ -104,7 +104,7 @@ export default function FleetPage() {
             <button className="nav-dropdown-btn"><Briefcase size={16} /> Services <ChevronDown size={14} /></button>
             <div className="nav-dropdown-content">
               <a href="/airport" onClick={() => setMenuOpen(false)}>Airport pickup & drop</a>
-              <a href="/#services" onClick={() => setMenuOpen(false)}>City Local Rental</a>
+              <a href="/local-rental" onClick={() => setMenuOpen(false)}>City Local Rental</a>
               <a href="/#services" onClick={() => setMenuOpen(false)}>Outstation Cabs</a>
               <a href="/#services" onClick={() => setMenuOpen(false)}>Tour Cab Booking</a>
             </div>
@@ -245,6 +245,7 @@ export default function FleetPage() {
     <a href={whatsapp} className="floating-whatsapp" aria-label="WhatsApp us"><MessageCircle /></a></main>
   )
 }
+
 
 
 
