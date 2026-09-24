@@ -144,7 +144,7 @@ export default function Page() {
             <div className="nav-dropdown-content">
               <a href="/airport" onClick={() => setMenuOpen(false)}>Airport pickup & drop</a>
               <a href="/local-rental" onClick={() => setMenuOpen(false)}>City Local Rental</a>
-              <a href="/#services" onClick={() => setMenuOpen(false)}>Outstation Cabs</a>
+              <a href="/outstation" onClick={() => setMenuOpen(false)}>Outstation Cabs</a>
               <a href="/#services" onClick={() => setMenuOpen(false)}>Tour Cab Booking</a>
             </div>
           </div>
@@ -191,6 +191,7 @@ export default function Page() {
     </main>
   )
 }
+
 
 
 

@@ -1,22 +1,28 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, Clock, ChevronDown } from 'lucide-react'
+import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, ChevronDown, SteeringWheel } from 'lucide-react'
 
-const localTaxis = [
-  { id: 1, name: 'Etios Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-39-09-EtiosCarRental.jpg', seats: '4+1', fare: '₹2400.00', included: '8Hrs 80Kms included', extra: 'Extra ₹15.00/km \n ₹150.00/hour' },
-  { id: 2, name: 'Ertiga Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-40-32-ErtigaCarRental.png', seats: '6+1', fare: '₹2799.00', included: '8Hrs 80Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 3, name: 'Innova Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-42-20-InnovaCarRental.png', seats: '7+1', fare: '₹2999.00', included: '4Hrs 40Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 4, name: 'Kia Carens Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-41-15-KiaCarnesCarRental.png', seats: '6+1', fare: '₹2999.00', included: '8Hrs 80Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 5, name: 'Crysta Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-43-38-InnovaCrystaCarRental.png', seats: '7+1', fare: '₹3499.00', included: '8Hrs 80Kms included', extra: 'Extra ₹25.00/km \n ₹250.00/hour' },
-  { id: 6, name: 'Hycross Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-46-30-InnovaHycrossCarRental.png', seats: '7+1', fare: '₹4199.00', included: '8Hrs 80Kms included', extra: 'Extra ₹30.00/km \n ₹300.00/hour' },
+const outstationTaxis = [
+  { id: 1, name: 'Sedan Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-29-11-SedanOutstationCabs.jpg', seats: '4+1', fare: '₹12.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 2, name: 'Etios Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-29-47-EtiosOutstationCabs.jpg', seats: '4+1', fare: '₹13.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 3, name: 'Ciaz Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-30-13-CiazOutstationCabs.png', seats: '4+1', fare: '₹14.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 4, name: 'Ertiga Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-31-45-ErtigaOutstationCabs.png', seats: '6+1', fare: '₹15.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 5, name: 'Kia Carens Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-32-27-KiaCarnesOutstationCabs.png', seats: '6+1', fare: '₹16.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 6, name: 'Innova Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2025-09-04-03-37-54-ToyotaInnova.jpg', seats: '7+1', fare: '₹18.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
+  { id: 7, name: 'Innova Crysta Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-35-00-InnovaCrystaOutstatinCabs.png', seats: '7+1', fare: '₹20.00/km', driver: 'Driver Bata 500.00/day', min: '300 Kms min rental/day' },
+  { id: 8, name: 'Tempo Traveller Outstation', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-37-12-OutstationTempoTraveller.png', seats: '12+1', fare: '₹21.00/km', driver: 'Driver Bata 700.00/day', min: '300 Kms min rental/day' },
+  { id: 9, name: 'Tempo Traveller Outstation ( A/C)', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-38-05-OutstationTempoTraveller.png', seats: '12+1', fare: '₹22.00/km', driver: 'Driver Bata 700.00/day', min: '300 Kms min rental/day' },
+  { id: 10, name: 'Innova Hycross Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-35-39-InnovaHycrossOutstationCabs.png', seats: '7+1', fare: '₹23.00/km', driver: 'Driver Bata 500.00/day', min: '300 Kms min rental/day' },
+  { id: 11, name: 'Urbania Luxury 12+1 Seater', img: 'https://www.greensrentacab.com/media/assets/2026-09-16-11-39-13-UrbaniaLuxury121Seater.jfif', seats: '12+1', fare: '₹45.00/km', driver: 'Driver Bata 1000.00/day', min: '300 Kms min rental/day' },
+  { id: 12, name: 'Urbania 16+1 Seater', img: 'https://www.greensrentacab.com/media/assets/2026-09-16-11-42-05-UrbaniaLuxury161Seater.jfif', seats: '16+1', fare: '₹45.00/km', driver: 'Driver Bata 1000.00/day', min: '300 Kms min rental/day' },
 ]
 
-export default function LocalRentalPage() {
+export default function OutstationPage() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const whatsapp = 'https://wa.me/919008000000?text=Hello GreensCab%2C I need a local taxi in Bangalore.'
+  const whatsapp = 'https://wa.me/919008000000?text=Hello GreensCab%2C I need an outstation taxi from Bangalore.'
   const phone = 'tel:+919008000000'
 
   useEffect(() => {
@@ -57,8 +63,8 @@ export default function LocalRentalPage() {
       <section className="fleet-page-header">
         <div className="container">
           <div className="hero-eyebrow">Affordable Taxi for Outstation Travel and Trips</div>
-          <h1>Best Bangalore Local Taxi Hire Service</h1>
-          <p className="subtitle">Choose from the wide range of cab/taxi with our local taxi booking in Bangalore.</p>
+          <h1>Book Outstation Taxi Hire From Bangalore</h1>
+          <p className="subtitle">Choose from the wide range of outstation taxi booking in Bangalore.</p>
           <div className="header-actions">
             <a href={phone} className="button secondary"><PhoneCall size={18} /> Call 24X7 +91 90080 00000</a>
           </div>
@@ -68,7 +74,7 @@ export default function LocalRentalPage() {
       <section className="section bg-light">
         <div className="container">
           <div className="airport-grid">
-            {localTaxis.map(car => (
+            {outstationTaxis.map(car => (
               <div key={car.id} className="airport-card">
                 <div className="airport-img-wrap">
                   <img src={car.img} alt={car.name} onError={(e) => { e.currentTarget.src = 'https://safeway.travel/images/fleet_gallery/toyota-etios-sedan/001.jpg?v=1' }} />
@@ -81,11 +87,8 @@ export default function LocalRentalPage() {
                   <div className="divider"></div>
                   <ul className="airport-features">
                     <li><Tag size={14} className="icon-blue" /> Fare <strong>{car.fare}</strong></li>
-                    <li><Car size={14} className="icon-blue" /> {car.included}</li>
-                    <li style={{alignItems: 'flex-start'}}>
-                      <MapPin size={14} className="icon-orange" style={{marginTop: '2px'}} />
-                      <span style={{whiteSpace: 'pre-line', lineHeight: '1.4'}}>{car.extra}</span>
-                    </li>
+                    <li><Car size={14} className="icon-blue" /> {car.driver}</li>
+                    <li><MapPin size={14} className="icon-orange" /> {car.min}</li>
                   </ul>
                   <div className="airport-actions">
                     <a href={phone} className="btn-dark">Book</a>
@@ -111,7 +114,7 @@ export default function LocalRentalPage() {
           <a href="/fleet">Our Fleet</a>
           <a href="/airport">Airport Taxi</a>
           <a href="/local-rental">Local Taxi</a>
-          <a href="/#contact">Contact Us</a>
+          <a href="/outstation">Outstation Cabs</a>
         </div>
         <div>
           <h3>Contact 24/7</h3>
@@ -124,4 +127,3 @@ export default function LocalRentalPage() {
     </main>
   )
 }
-
