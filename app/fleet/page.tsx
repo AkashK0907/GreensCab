@@ -65,7 +65,7 @@ export default function FleetPage() {
   const [search, setSearch] = useState('')
   const [tripMode, setTripMode] = useState('Local (8h/80k)')
 
-  const whatsapp = 'https://wa.me/919008000000?text=Hello%20GreensCab%2C%20I%20need%20a%20travel%20quote.'
+  const whatsapp = 'https://wa.me/919686025999?text=Hello%20GreensCab%2C%20I%20need%20a%20travel%20quote.'
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -127,7 +127,7 @@ export default function FleetPage() {
           <p>From airport executive sedans & hybrid SUVs to next-gen Force Urbania, luxury Tempo Travellers & 49-seater ultra luxury Volvo coaches with transparent per-km tariffs.</p>
           <div className="header-actions">
             <a href={whatsapp} className="button primary"><MessageCircle /> Instant WhatsApp Booking</a>
-            <a href="tel:+919008000000" className="button secondary outline"><PhoneCall /> Call: +91 90080 00000</a>
+            <a href="tel:+919686025999" className="button secondary outline"><PhoneCall /> Call: +91 96860 25999</a>
           </div>
         </div>
       </section>
@@ -217,7 +217,7 @@ export default function FleetPage() {
                     <a href={whatsapp} className="btn-whatsapp">
                       <MessageCircle size={18} /> WhatsApp
                     </a>
-                    <a href="tel:+919008000000" className="btn-call">
+                    <a href="tel:+919686025999" className="btn-call">
                       <PhoneCall size={18} /> Call Now
                     </a>
                   </div>
@@ -239,12 +239,14 @@ export default function FleetPage() {
         </div>
         <div className="reveal" style={{ transitionDelay: '200ms' }}>
           <h3>Contact</h3>
-          <a href="tel:+919008000000">+91 90080 00000</a><a href={whatsapp}>WhatsApp us</a><a href="mailto:hello@greenscab.com">hello@greenscab.com</a>
+          <a href="tel:+919686025999">+91 96860 25999</a><a href={whatsapp}>WhatsApp us</a><a href="mailto:hello@greenscab.com">hello@greenscab.com</a>
         </div>
       </footer>
     <a href={whatsapp} className="floating-whatsapp" aria-label="WhatsApp us"><MessageCircle /></a></main>
   )
 }
+
+
 
 
 

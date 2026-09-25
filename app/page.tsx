@@ -131,7 +131,7 @@ export default function Page() {
     { name: 'Mercedes-Benz & BMW Luxury', desc: 'Flagship luxury sedans with uniformed executive chauffeurs for celebrity arrivals, corporate delegations, and luxury weddings.', img: 'https://safeway.travel/images/fleet_gallery/mercedes-bmw-luxury/001.jpg?v=57aaab0b', badge1: 'VIP Limousine', badge2: 'Chauffeur VIP', price: 'From ₹100 / km', capacity: '5-Star Luxury' }
   ]
   const current = heroSlides[slide]
-  const whatsapp = 'https://wa.me/919008000000?text=Hello%20GreensCab%2C%20I%20need%20a%20travel%20quote.'
+  const whatsapp = 'https://wa.me/919686025999?text=Hello%20GreensCab%2C%20I%20need%20a%20travel%20quote.'
   return (
     <main className="site-shell">
       <header className={`topbar ${scrolled ? 'scrolled' : ''}`}>
@@ -186,11 +186,13 @@ export default function Page() {
 
       <section className="section faq-section" id="faq"><div className="section-heading reveal"><span>Got questions? We&apos;ve got answers</span><h2>Frequently Asked Questions</h2><p>Transparent policies, billing rules, chauffeur standards & booking details.</p></div><div className="faq-list reveal">{faqs.map(([q,a], i) => <div className={faq === i ? 'faq open' : 'faq'} key={q}><button onClick={() => setFaq(faq === i ? -1 : i)}><span>{q}</span><ChevronDown /></button>{faq === i && <p>{a}</p>}</div>)}</div></section>
 
-      <footer id="contact"><div className="reveal"><div className="logo-text"><div className="logo-icon-wrap"><Leaf className="logo-icon" strokeWidth={2.5} /></div><span className="greens">Greens</span><span className="cab">Cab</span></div><p>Premium chauffeur-driven mobility across Bengaluru and South India.</p></div><div className="reveal" style={{ transitionDelay: '100ms' }}><h3>Quick Links</h3><a href="/fleet">Our Fleet</a><a href="#tours">Tour Packages</a><a href="#faq">FAQs</a></div><div className="reveal" style={{ transitionDelay: '200ms' }}><h3>Contact</h3><a href="tel:+919008000000">+91 90080 00000</a><a href={whatsapp}>WhatsApp us</a><a href="mailto:hello@greenscab.com">hello@greenscab.com</a></div></footer>
+      <footer id="contact"><div className="reveal"><div className="logo-text"><div className="logo-icon-wrap"><Leaf className="logo-icon" strokeWidth={2.5} /></div><span className="greens">Greens</span><span className="cab">Cab</span></div><p>Premium chauffeur-driven mobility across Bengaluru and South India.</p></div><div className="reveal" style={{ transitionDelay: '100ms' }}><h3>Quick Links</h3><a href="/fleet">Our Fleet</a><a href="#tours">Tour Packages</a><a href="#faq">FAQs</a></div><div className="reveal" style={{ transitionDelay: '200ms' }}><h3>Contact</h3><p style={{fontSize: "13px", lineHeight: "1.4", marginBottom: "10px", color: "#64748b", maxWidth: "250px"}}>25, 2nd Cross St, Muniyappa Layout, Nagenahalli, Narayanapura, Bengaluru, Karnataka 560077</p><a href="tel:+919686025999">+91 96860 25999</a><a href={whatsapp}>WhatsApp us</a><a href="mailto:hello@greenscab.com">hello@greenscab.com</a></div></footer>
       <a className="floating-whatsapp" href={whatsapp} aria-label="Chat on WhatsApp"><MessageCircle /></a>
     </main>
   )
 }
+
+
 
 
 

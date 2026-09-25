@@ -20,8 +20,8 @@ export default function AirportPage() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  const whatsapp = 'https://wa.me/919008000000?text=Hello GreensCab%2C I need an airport taxi.'
-  const phone = 'tel:+919008000000'
+  const whatsapp = 'https://wa.me/919686025999?text=Hello GreensCab%2C I need an airport taxi.'
+  const phone = 'tel:+919686025999'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -56,7 +56,7 @@ export default function AirportPage() {
           <h1>Book Airport Taxi in Bangalore</h1>
           <p className="subtitle">Choose from the wide range of cab/taxi with our airport taxi booking in Bangalore.</p>
           <div className="header-actions">
-            <a href={phone} className="button secondary"><PhoneCall size={18} /> Call 24X7 +91 90080 00000</a>
+            <a href={phone} className="button secondary"><PhoneCall size={18} /> Call 24X7 +91 96860 25999</a>
           </div>
         </div>
       </section>
@@ -109,13 +109,14 @@ export default function AirportPage() {
         <div>
           <h3>Contact 24/7</h3>
           <p>Email: bookings@greenscab.in</p>
-          <p>Phone: +91 90080 00000</p>
-          <p>Bengaluru, Karnataka</p>
+          <p>Phone: +91 96860 25999</p>
+          <p>25, 2nd Cross St, Muniyappa Layout, Nagenahalli, Narayanapura, Bengaluru, Karnataka 560077</p>
         </div>
       </footer>
       <a href={whatsapp} className="floating-whatsapp" aria-label="Chat on WhatsApp"><MessageCircle /></a>
     </main>
   )
 }
+
 
 
