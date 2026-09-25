@@ -173,12 +173,12 @@ export default function Page() {
 
       <section className="quick-links reveal"><a href="#contact"><MapPin /> <span>KIAL Airport Transfers<small>Fixed from ₹2,000</small></span></a><a href="#tours"><Car /> <span>Outstation Getaways<small>14+ Tour Circuits</small></span></a><a href="#contact"><Clock3 /> <span>Corporate ETS Shuttles<small>GST SAC 9964 Invoicing</small></span></a><a href="#contact"><Users /> <span>Wedding VIP Convoys<small>Luxury Fleet Mix</small></span></a></section>
 
-      <section className="section" id="fleet"><div className="section-heading reveal"><span>Premium vehicles</span><h2>Our Fleet</h2><p>Choose from our wide range of well-maintained vehicles</p></div><div className="fleet-grid">{fleet.map((item, i) => <article className="fleet-card reveal" key={item.title} style={{ transitionDelay: `${i * 100}ms` }}><div className="fleet-image"><img src={item.image} alt={item.title} /><span className="badge">{item.badge}</span></div><div className="fleet-content"><h3>{item.title}</h3><p>{item.description}</p>              <ul>
+      <section className="section" id="fleet"><div className="section-heading reveal"><span>Premium vehicles</span><h2>Our Fleet</h2><p>Choose from our wide range of well-maintained vehicles</p></div><div className="fleet-grid">{fleet.slice(0, 4).map((item, i) => <article className="fleet-card reveal" key={item.title} style={{ transitionDelay: `${i * 100}ms` }}><div className="fleet-image"><img src={item.image} alt={item.title} /><span className="badge">{item.badge}</span></div><div className="fleet-content"><h3>{item.title}</h3><p>{item.description}</p>              <ul>
                 {item.specs.map((spec, j) => {
                   const Icon = spec.icon
                   return <li key={j}><Icon size={16} /> {spec.text}</li>
                 })}
-              </ul><a className="button primary" style={{width: '100%', justifyContent: 'center', marginTop: 'auto'}} href={item.url}>{item.link}</a></div></article>)}</div></section>
+              </ul><a className="button primary" style={{width: '100%', justifyContent: 'center', marginTop: 'auto'}} href={item.url}>{item.link}</a></div></article>)}</div><div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}><a href="/fleet" className="button secondary">View All Vehicles <ArrowRight size={18} style={{ marginLeft: "8px" }} /></a></div></section>
 
       <section className="section tours" id="tours"><div className="section-heading reveal"><span>Curated outstation itineraries</span><h2>Popular Outstation Routes & Tour Packages</h2><p>Direct chauffeur-driven round-trip packages from Bengaluru with transparent per-km billing and verified highway drivers.</p></div><div className="filters reveal">{['All Tours (20)', 'Heritage & Culture (4)', 'Hill Stations (5)', 'Sacred Pilgrimage (4)', 'Wildlife & Safari (3)', 'Coastal & Beach (4)'].map((x, i) => <button className={i === 0 ? 'selected' : ''} key={x}>{x}</button>)}</div><div className="tour-grid">{tours.map(([name, image, category], i) => <article className="tour-card reveal" key={name} style={{ transitionDelay: `${i * 100}ms` }}><img src={image} alt={name} /><div><span>{category}</span><h3>{name}</h3><a href="#contact">Explore route <ArrowRight /></a></div></article>)}</div><div className="custom-banner reveal"><div><h3>Planning a custom group outing or interstate corporate yatra?</h3><p>We customize multi-day itineraries for 4 to 50+ passengers with Tempo Travellers & Luxury Coaches.</p></div><a className="button secondary" href="#contact">Choose Fleet Vehicle <ArrowRight /></a><a className="button primary" href={whatsapp}><MessageCircle /> Custom Tour Quote</a></div></section>
 
@@ -191,6 +191,7 @@ export default function Page() {
     </main>
   )
 }
+
 
 
 
