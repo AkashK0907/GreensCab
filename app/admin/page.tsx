@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import initialData from '../../data/content.json'
-import { Save, LogIn, Lock, Database, Trash2, Plus, Edit } from 'lucide-react'
+import { Save, LogIn, Lock, Database, Trash2, Plus, Upload } from 'lucide-react'
 
 export default function AdminPage() {
   const [passcode, setPasscode] = useState('')
@@ -13,6 +13,7 @@ export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('fleet')
   const [status, setStatus] = useState({ type: '', message: '' })
   const [isSaving, setIsSaving] = useState(false)
+  const [pendingUploads, setPendingUploads] = useState<any[]>([])
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,13 +37,14 @@ export default function AdminPage() {
       const res = await fetch('/api/admin/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data, token: githubToken })
+        body: JSON.stringify({ data, token: githubToken, uploads: pendingUploads })
       })
 
       const result = await res.json()
       
       if (res.ok) {
         setStatus({ type: 'success', message: result.message })
+        setPendingUploads([]) // clear uploads after successful save
       } else {
         setStatus({ type: 'error', message: result.error || 'Failed to save changes' })
       }
@@ -62,6 +64,50 @@ export default function AdminPage() {
   const handleArrayChange = (tab: string, itemIndex: number, field: string, arrayIndex: number, value: string) => {
     const newData = { ...data }
     newData[tab][itemIndex][field][arrayIndex] = value
+    setData(newData)
+  }
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, tab: string, index: number, field: string) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      const base64Str = (event.target?.result as string).split(',')[1] // remove data:image/png;base64,
+      const filename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`
+      const path = `public/uploads/${filename}`
+      const publicUrl = `/uploads/${filename}`
+
+      // Add to pending uploads
+      setPendingUploads(prev => [...prev, { path, base64: base64Str }])
+
+      // Update data state with new URL
+      handleItemChange(tab, index, field, publicUrl)
+    }
+    reader.readAsDataURL(file)
+  }
+
+  const handleAddItem = () => {
+    const newData = { ...data }
+    const currentArray = newData[activeTab]
+    const template = currentArray.length > 0 ? { ...currentArray[0] } : {}
+    
+    // Clear the template values but keep structure
+    Object.keys(template).forEach(key => {
+      if (key === 'id') template[key] = Date.now()
+      else if (Array.isArray(template[key])) template[key] = []
+      else template[key] = ''
+    })
+
+    if (!template.id) template.id = Date.now()
+    newData[activeTab] = [...currentArray, template]
+    setData(newData)
+  }
+
+  const handleDeleteItem = (index: number) => {
+    if (!confirm('Are you sure you want to delete this item?')) return
+    const newData = { ...data }
+    newData[activeTab].splice(index, 1)
     setData(newData)
   }
 
@@ -138,14 +184,39 @@ export default function AdminPage() {
         <div className="admin-items-grid">
           {data[activeTab].map((item: any, index: number) => (
             <div key={item.id || index} className="admin-item-card">
-              <div className="admin-item-header">
+              <div className="admin-item-header" style={{display: 'flex', justifyContent: 'space-between'}}>
                 <strong>{item.name || item.title || `Item ${index + 1}`}</strong>
+                <button onClick={() => handleDeleteItem(index)} className="admin-btn-icon danger" title="Delete Item">
+                  <Trash2 size={16} />
+                </button>
               </div>
               <div className="admin-item-body">
                 {Object.keys(item).filter(k => k !== 'id').map(key => (
                   <div key={key} className="admin-field">
                     <label>{key}</label>
-                    {Array.isArray(item[key]) ? (
+                    {key === 'img' || key === 'image' ? (
+                      <div className="admin-image-field">
+                        <input 
+                          type="text" 
+                          value={item[key]}
+                          onChange={(e) => handleItemChange(activeTab, index, key, e.target.value)}
+                          className="admin-input-small"
+                          placeholder="Image URL"
+                        />
+                        <div className="admin-file-upload">
+                          <label className="admin-upload-btn">
+                            <Upload size={14} /> Upload Image
+                            <input 
+                              type="file" 
+                              accept="image/*" 
+                              onChange={(e) => handleImageUpload(e, activeTab, index, key)} 
+                              style={{ display: 'none' }}
+                            />
+                          </label>
+                        </div>
+                        {item[key] && <img src={item[key]} alt="preview" className="admin-img-preview" />}
+                      </div>
+                    ) : Array.isArray(item[key]) ? (
                       <div className="admin-array">
                         {item[key].map((arrVal: string, arrIdx: number) => (
                           <input 
@@ -179,6 +250,13 @@ export default function AdminPage() {
               </div>
             </div>
           ))}
+
+          <div className="admin-item-card admin-add-card" onClick={handleAddItem}>
+            <div className="admin-add-content">
+              <Plus size={32} />
+              <span>Add New Item</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

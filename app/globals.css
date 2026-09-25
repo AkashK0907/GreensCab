@@ -242,3 +242,16 @@ footer { background:#202c39; color:#dce5ee; display:grid; grid-template-columns:
   .admin-items-grid { grid-template-columns: 1fr; }
   .admin-content { height: auto; padding: 20px; }
 }
+.admin-btn-icon { background: transparent; border: none; cursor: pointer; padding: 4px; border-radius: 4px; color: #64748b; transition: all 0.2s; }
+.admin-btn-icon:hover { background: #f1f5f9; color: #0f172a; }
+.admin-btn-icon.danger:hover { background: #fef2f2; color: #ef4444; }
+
+.admin-add-card { border: 2px dashed #cbd5e1; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; min-height: 200px; transition: all 0.2s; box-shadow: none; }
+.admin-add-card:hover { border-color: #2563eb; background: #eff6ff; }
+.admin-add-content { display: flex; flex-direction: column; align-items: center; gap: 10px; color: #64748b; font-weight: 600; }
+.admin-add-card:hover .admin-add-content { color: #2563eb; }
+
+.admin-image-field { display: flex; flex-direction: column; gap: 8px; }
+.admin-upload-btn { display: inline-flex; align-items: center; gap: 6px; background: #e2e8f0; color: #334155; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: background 0.2s; width: fit-content; }
+.admin-upload-btn:hover { background: #cbd5e1; }
+.admin-img-preview { width: 100%; height: 120px; object-fit: cover; border-radius: 6px; border: 1px solid #e2e8f0; margin-top: 5px; }
