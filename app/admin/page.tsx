@@ -121,7 +121,7 @@ export default function AdminPage() {
           <form onSubmit={handleLogin}>
             <input 
               type="password" 
-              placeholder="Enter passcode (0315)" 
+              placeholder="Enter passcode" 
               value={passcode} 
               onChange={e => setPasscode(e.target.value)}
               className="admin-input"
@@ -262,3 +262,4 @@ export default function AdminPage() {
     </div>
   )
 }
+

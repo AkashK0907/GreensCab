@@ -178,7 +178,7 @@ export default function Page() {
                   const Icon = spec.icon
                   return <li key={j}><Icon size={16} /> {spec.text}</li>
                 })}
-              </ul><a className="button primary" style={{width: '100%', justifyContent: 'center', marginTop: 'auto'}} href={item.url}>{item.link}</a></div></article>)}</div><div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}><a href="/fleet" className="button secondary">View All Vehicles <ArrowRight size={18} style={{ marginLeft: "8px" }} /></a></div></section>
+              </ul><a className="button primary" style={{width: '100%', justifyContent: 'center', marginTop: 'auto'}} href={item.url}>{item.link}</a></div></article>)}</div><div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}><a href="/fleet" className="button" style={{ border: "1px solid #cbd5e1", color: "#1e293b", background: "#f8fafc" }}>View All Vehicles <ArrowRight size={18} style={{ marginLeft: "8px" }} /></a></div></section>
 
       <section className="section tours" id="tours"><div className="section-heading reveal"><span>Curated outstation itineraries</span><h2>Popular Outstation Routes & Tour Packages</h2><p>Direct chauffeur-driven round-trip packages from Bengaluru with transparent per-km billing and verified highway drivers.</p></div><div className="filters reveal">{['All Tours (20)', 'Heritage & Culture (4)', 'Hill Stations (5)', 'Sacred Pilgrimage (4)', 'Wildlife & Safari (3)', 'Coastal & Beach (4)'].map((x, i) => <button className={i === 0 ? 'selected' : ''} key={x}>{x}</button>)}</div><div className="tour-grid">{tours.map(([name, image, category], i) => <article className="tour-card reveal" key={name} style={{ transitionDelay: `${i * 100}ms` }}><img src={image} alt={name} /><div><span>{category}</span><h3>{name}</h3><a href="#contact">Explore route <ArrowRight /></a></div></article>)}</div><div className="custom-banner reveal"><div><h3>Planning a custom group outing or interstate corporate yatra?</h3><p>We customize multi-day itineraries for 4 to 50+ passengers with Tempo Travellers & Luxury Coaches.</p></div><a className="button secondary" href="#contact">Choose Fleet Vehicle <ArrowRight /></a><a className="button primary" href={whatsapp}><MessageCircle /> Custom Tour Quote</a></div></section>
 
@@ -191,6 +191,7 @@ export default function Page() {
     </main>
   )
 }
+
 
 
 
