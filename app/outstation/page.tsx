@@ -49,7 +49,7 @@ export default function OutstationPage() {
               <a href="/airport" onClick={() => setMenuOpen(false)}>Airport pickup & drop</a>
               <a href="/local-rental" onClick={() => setMenuOpen(false)}>City Local Rental</a>
               <a href="/outstation" onClick={() => setMenuOpen(false)}>Outstation Cabs</a>
-              <a href="/#services" onClick={() => setMenuOpen(false)}>Tour Cab Booking</a>
+              <a href="/tours" onClick={() => setMenuOpen(false)}>Tour Cab Booking</a>
             </div>
           </div>
           <a href="/#tours" onClick={() => setMenuOpen(false)}><Map size={16} /> Tours</a>
@@ -127,4 +127,5 @@ export default function OutstationPage() {
     </main>
   )
 }
+
 
