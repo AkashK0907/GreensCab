@@ -3,14 +3,9 @@
 import { useState, useEffect } from 'react'
 import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, Clock, ChevronDown } from 'lucide-react'
 
-const localTaxis = [
-  { id: 1, name: 'Etios Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-39-09-EtiosCarRental.jpg', seats: '4+1', fare: '₹2400.00', included: '8Hrs 80Kms included', extra: 'Extra ₹15.00/km \n ₹150.00/hour' },
-  { id: 2, name: 'Ertiga Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-40-32-ErtigaCarRental.png', seats: '6+1', fare: '₹2799.00', included: '8Hrs 80Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 3, name: 'Innova Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-42-20-InnovaCarRental.png', seats: '7+1', fare: '₹2999.00', included: '4Hrs 40Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 4, name: 'Kia Carens Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-41-15-KiaCarnesCarRental.png', seats: '6+1', fare: '₹2999.00', included: '8Hrs 80Kms included', extra: 'Extra ₹20.00/km \n ₹200.00/hour' },
-  { id: 5, name: 'Crysta Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-43-38-InnovaCrystaCarRental.png', seats: '7+1', fare: '₹3499.00', included: '8Hrs 80Kms included', extra: 'Extra ₹25.00/km \n ₹250.00/hour' },
-  { id: 6, name: 'Hycross Rental Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-46-30-InnovaHycrossCarRental.png', seats: '7+1', fare: '₹4199.00', included: '8Hrs 80Kms included', extra: 'Extra ₹30.00/km \n ₹300.00/hour' },
-]
+import contentData from '../../data/content.json'
+const localTaxis = contentData.local
+
 
 export default function LocalRentalPage() {
   const [menuOpen, setMenuOpen] = useState(false)

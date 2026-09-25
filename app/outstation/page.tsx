@@ -3,20 +3,9 @@
 import { useState, useEffect } from 'react'
 import { Briefcase, Leaf, Menu, X, PhoneCall, MessageCircle, ShieldCheck, HelpCircle, Car, Map, MapPin, Users, Tag, ChevronDown, SteeringWheel } from 'lucide-react'
 
-const outstationTaxis = [
-  { id: 1, name: 'Sedan Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-29-11-SedanOutstationCabs.jpg', seats: '4+1', fare: '₹12.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 2, name: 'Etios Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-29-47-EtiosOutstationCabs.jpg', seats: '4+1', fare: '₹13.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 3, name: 'Ciaz Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-30-13-CiazOutstationCabs.png', seats: '4+1', fare: '₹14.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 4, name: 'Ertiga Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-31-45-ErtigaOutstationCabs.png', seats: '6+1', fare: '₹15.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 5, name: 'Kia Carens Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-32-27-KiaCarnesOutstationCabs.png', seats: '6+1', fare: '₹16.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 6, name: 'Innova Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2025-09-04-03-37-54-ToyotaInnova.jpg', seats: '7+1', fare: '₹18.00/km', driver: 'Driver Bata 400.00/day', min: '300 Kms min rental/day' },
-  { id: 7, name: 'Innova Crysta Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-35-00-InnovaCrystaOutstatinCabs.png', seats: '7+1', fare: '₹20.00/km', driver: 'Driver Bata 500.00/day', min: '300 Kms min rental/day' },
-  { id: 8, name: 'Tempo Traveller Outstation', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-37-12-OutstationTempoTraveller.png', seats: '12+1', fare: '₹21.00/km', driver: 'Driver Bata 700.00/day', min: '300 Kms min rental/day' },
-  { id: 9, name: 'Tempo Traveller Outstation ( A/C)', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-38-05-OutstationTempoTraveller.png', seats: '12+1', fare: '₹22.00/km', driver: 'Driver Bata 700.00/day', min: '300 Kms min rental/day' },
-  { id: 10, name: 'Innova Hycross Outstation Cab', img: 'https://www.greensrentacab.com/media/assets/2026-01-18-11-35-39-InnovaHycrossOutstationCabs.png', seats: '7+1', fare: '₹23.00/km', driver: 'Driver Bata 500.00/day', min: '300 Kms min rental/day' },
-  { id: 11, name: 'Urbania Luxury 12+1 Seater', img: 'https://www.greensrentacab.com/media/assets/2026-09-16-11-39-13-UrbaniaLuxury121Seater.jfif', seats: '12+1', fare: '₹45.00/km', driver: 'Driver Bata 1000.00/day', min: '300 Kms min rental/day' },
-  { id: 12, name: 'Urbania 16+1 Seater', img: 'https://www.greensrentacab.com/media/assets/2026-09-16-11-42-05-UrbaniaLuxury161Seater.jfif', seats: '16+1', fare: '₹45.00/km', driver: 'Driver Bata 1000.00/day', min: '300 Kms min rental/day' },
-]
+import contentData from '../../data/content.json'
+const outstationTaxis = contentData.outstation
+
 
 export default function OutstationPage() {
   const [menuOpen, setMenuOpen] = useState(false)
