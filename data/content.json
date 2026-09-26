@@ -471,7 +471,7 @@
       "price": "22199",
       "duration": "4 Days",
       "category": "Hill Stations",
-      "img": "https://images.unsplash.com/photo-1593693397690-362bb9a1bfc5?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790443869891-mnr1.jpg"
     },
     {
       "id": 11,
@@ -487,7 +487,7 @@
       "price": "24899",
       "duration": "5 Days",
       "category": "Hill Stations",
-      "img": "https://images.unsplash.com/photo-1610486339003-455a5ec337ee?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790443910856-ooty2.jpg"
     },
     {
       "id": 13,
@@ -495,7 +495,7 @@
       "price": "25499",
       "duration": "5 Days",
       "category": "Hill Stations",
-      "img": "https://images.unsplash.com/photo-1643906352055-6b5ce534c0e9?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790443942863-cnr1.jpg"
     },
     {
       "id": 14,
@@ -503,7 +503,7 @@
       "price": "26299",
       "duration": "5 Days",
       "category": "Heritage & Culture",
-      "img": "https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790443976401-ooty3.jpg"
     },
     {
       "id": 15,
@@ -511,7 +511,7 @@
       "price": "28799",
       "duration": "6 Days",
       "category": "Heritage & Culture",
-      "img": "https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790444824607-crg8.jpg"
     },
     {
       "id": 16,
@@ -519,7 +519,7 @@
       "price": "32699",
       "duration": "7 Days",
       "category": "Heritage & Culture",
-      "img": "https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790444882349-crg6.jpg"
     },
     {
       "id": 17,
@@ -527,7 +527,7 @@
       "price": "33499",
       "duration": "7 Days",
       "category": "Hill Stations",
-      "img": "https://images.unsplash.com/photo-1610486339003-455a5ec337ee?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790444921070-kdk1.jpg"
     },
     {
       "id": 18,
@@ -535,7 +535,7 @@
       "price": "3499",
       "duration": "1 Day",
       "category": "Heritage & Culture",
-      "img": "https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790444963430-nandihills1.jpg"
     },
     {
       "id": 19,
@@ -543,7 +543,7 @@
       "price": "3999",
       "duration": "1 Day",
       "category": "City Tour",
-      "img": "https://images.unsplash.com/photo-1600111765039-4eeebc4b7875?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790445061941-blr1.jpg"
     },
     {
       "id": 20,
@@ -551,7 +551,7 @@
       "price": "41200",
       "duration": "9 Days",
       "category": "Heritage & Culture",
-      "img": "https://images.unsplash.com/photo-1620766182966-c6eb5ed2b788?auto=format&fit=crop&w=600&q=80"
+      "img": "/uploads/1790445128159-ooty4.jpg"
     },
     {
       "id": 21,
