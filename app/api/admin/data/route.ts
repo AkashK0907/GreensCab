@@ -1,12 +1,14 @@
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(req: Request) {
   try {
     const { data, uploads } = await req.json()
-    const token = process.env.GITHUB_TOKEN
+    const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN
     
     if (!token) {
-      return NextResponse.json({ error: "Server Configuration Error: GITHUB_TOKEN environment variable is missing." }, { status: 500 })
+      return NextResponse.json({ error: "Server Configuration Error: GITHUB_TOKEN environment variable is missing on Vercel. Please check your Vercel Project Settings > Environment Variables, or wait for the redeployment to finish." }, { status: 500 })
     }
 
     const repoOwner = 'AkashK0907'
@@ -15,7 +17,6 @@ export async function POST(req: Request) {
     // 1. Process any pending image uploads first
     if (uploads && uploads.length > 0) {
       for (const upload of uploads) {
-        // We do a direct PUT for new files (or overwrite existing). We try to GET sha first just in case.
         let fileSha = undefined;
         try {
           const getRes = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${upload.path}`, {
@@ -44,7 +45,6 @@ export async function POST(req: Request) {
         if (!putRes.ok) {
           const errText = await putRes.text();
           console.error('Failed to upload image:', errText);
-          // We can choose to fail the whole request, or just skip. We will fail it.
           return NextResponse.json({ error: `Failed to upload image to GitHub: ${errText}` }, { status: putRes.status })
         }
       }
@@ -93,5 +93,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 }
-
-
