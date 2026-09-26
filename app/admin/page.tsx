@@ -6,8 +6,7 @@ import { Save, LogIn, Lock, Database, Trash2, Plus, Upload } from 'lucide-react'
 
 export default function AdminPage() {
   const [passcode, setPasscode] = useState('')
-  const [githubToken, setGithubToken] = useState('')
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
   
   const [data, setData] = useState<any>(initialData)
   const [activeTab, setActiveTab] = useState('fleet')
@@ -25,11 +24,6 @@ export default function AdminPage() {
   }
 
   const handleSave = async () => {
-    if (!githubToken) {
-      setStatus({ type: 'error', message: 'Please provide a GitHub Personal Access Token.' })
-      return
-    }
-
     setIsSaving(true)
     setStatus({ type: 'info', message: 'Committing changes to GitHub...' })
 
@@ -37,7 +31,7 @@ export default function AdminPage() {
       const res = await fetch('/api/admin/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data, token: githubToken, uploads: pendingUploads })
+        body: JSON.stringify({ data, uploads: pendingUploads })
       })
 
       const result = await res.json()
@@ -154,17 +148,7 @@ export default function AdminPage() {
           ))}
         </nav>
         
-        <div className="admin-token-section">
-          <label>GitHub Token (Required to Save)</label>
-          <input 
-            type="password" 
-            placeholder="ghp_..." 
-            value={githubToken}
-            onChange={e => setGithubToken(e.target.value)}
-            className="admin-input small"
-          />
-          <p className="token-help">Need one? Go to GitHub Settings &gt; Developer settings &gt; Personal access tokens.</p>
-        </div>
+
       </div>
 
       <div className="admin-content">
@@ -262,4 +246,5 @@ export default function AdminPage() {
     </div>
   )
 }
+
 

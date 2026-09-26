@@ -2,10 +2,11 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   try {
-    const { data, token, uploads } = await req.json()
+    const { data, uploads } = await req.json()
+    const token = process.env.GITHUB_TOKEN
     
     if (!token) {
-      return NextResponse.json({ error: 'GitHub Token is required.' }, { status: 401 })
+      return NextResponse.json({ error: "Server Configuration Error: GITHUB_TOKEN environment variable is missing." }, { status: 500 })
     }
 
     const repoOwner = 'AkashK0907'
@@ -92,3 +93,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 }
+
+
